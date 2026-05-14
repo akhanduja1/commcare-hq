@@ -190,11 +190,6 @@ class CommCareMobileBuild(SyncSQLToCouchMixin, models.Model):
         return self
 
     @classmethod
-    def all_builds(cls):
-        # TODO: sort every time? Does every caller prefer a sorted list?
-        return CommCareMobileBuild.objects.all().order_by('time')
-
-    @classmethod
     def _migration_get_fields(cls):
         return [
             "version",
