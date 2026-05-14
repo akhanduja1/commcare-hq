@@ -28,3 +28,10 @@ def contextmanager_class(cls):
 
 def get_tmp_extract_dir(dump_file_path, specifier=""):
     return f'_tmp_load_{specifier}_{dump_file_path}'
+
+
+def validate_archive_path(archive_path, suffix):
+    if not archive_path.endswith(suffix):
+        raise ValueError(
+            f"archive_path must end with {suffix!r}: {archive_path!r}"
+        )
